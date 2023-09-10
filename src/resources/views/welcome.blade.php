@@ -18,7 +18,8 @@
         <h2>Tips for Playing</h2>
         <ul>
             <li>Tools will be provided when appropriate</li>
-            <li>The first layer easier than the second</li>
+            <li>The first layer should be easier than the second</li>
+            <li>Each puzzle has a puzzle code you can use to access the puzzle as a friend</li>
         </ul>
 
         <form method="POST" action="{{ route('check.password') }}">

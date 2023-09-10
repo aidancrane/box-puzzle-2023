@@ -38,10 +38,26 @@ class PasswordController extends Controller
         if ($enteredPassword === $password) {
             // Password is correct, set a session or cookie to remember the user
             $request->session()->put('authenticated', true);
+            $request->session()->put('current-puzzle', 0);
 
             return redirect('/');
         }
 
         return redirect()->back()->with('error', 'Incorrect password.');
     }
+
+    public function advancePuzzle(Request $request)
+    {
+        $enteredPuzzleCode = $request->input('puzzle-code');
+
+        if ($enteredPuzzleCode === 'puzzle-password-goes-here') {
+            // Unlock a puzzle for the user.
+            $request->session()->put('current-puzzle', 0);
+
+            return redirect('/');
+        }
+
+        return redirect()->back()->with('error', 'Puzzle code not recognized.');
+    }
+
 }
