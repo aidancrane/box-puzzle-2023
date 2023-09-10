@@ -1,11 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Courier New', monospace;
+    background-color: #333;
     margin: 0;
     padding: 0;
 }
 
 header {
+    font-family: Arial, sans-serif;
     text-align: center;
     padding: 20px;
     background-color: #333;
@@ -18,7 +19,7 @@ main {
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 }
 
 label {
@@ -27,7 +28,7 @@ label {
 }
 
 input[type="text"] {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
