@@ -18,7 +18,7 @@ Route::get("/", ['as' => 'welcome', 'uses' => 'App\Http\Controllers\PasswordCont
 Route::post("/password", ['as' => 'check.password', 'uses' => 'App\Http\Controllers\PasswordController@checkPassword'])->withoutMiddleware('password');
 Route::post("/advance", ['as' => 'check.puzzle-advance', 'uses' => 'App\Http\Controllers\PasswordController@advancePuzzle']);
 
-
+Route::get("/cipher", ['as' => 'question1.question', 'uses' => 'App\Http\Controllers\PuzzleController@question1']);
 
 Route::fallback(function () {
     return view("404"); // template should exists

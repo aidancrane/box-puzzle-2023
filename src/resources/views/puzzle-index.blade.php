@@ -6,9 +6,14 @@
     <div class="puzzle">
 
         <h1>Puzzles</h1>
-        <ul>
-            <li>puzzle question goes here.</li>
-        </ul>
+        <ol>
+            @if (session('current-puzzle') == 0)
+            <li><a href="{{ route('question1.question') }}">Cipher</a></li>
+            @endif
+            @if (session('current-puzzle') > 1)
+            <li>puzzle question goes here. 2</li>
+            @endif
+        </ol>
 
         <h2>Unlock Puzzles</h2>
 
