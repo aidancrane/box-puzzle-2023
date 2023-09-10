@@ -21,7 +21,13 @@ class PasswordController extends Controller
 
         $welcomeMessage = $welcomeMessage[array_rand($welcomeMessage, 1)];
 
+        if ($request->session()->has('authenticated')) {
+            return view('puzzle-index');
+        }
+
         return view('welcome')->with('welcomeMessage', $welcomeMessage);
+
+
     }
 
     public function checkPassword(Request $request)
@@ -29,13 +35,11 @@ class PasswordController extends Controller
         $password = '741142';
         $enteredPassword = $request->input('password');
 
-        dd($enteredPassword);
-
         if ($enteredPassword === $password) {
             // Password is correct, set a session or cookie to remember the user
             $request->session()->put('authenticated', true);
 
-            return redirect('/index');
+            return redirect('/');
         }
 
         return redirect()->back()->with('error', 'Incorrect password.');

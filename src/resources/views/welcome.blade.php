@@ -28,7 +28,7 @@
                 <p style="color: red;">{{ session('error') }}</p>
             @endif
 
-            <input type="text" id="password" placeholder="Enter starter code...">
+            <input type="text" id="password" name="password" placeholder="Enter starter code...">
             <button id="unlockButton">Unlock</button>
         </form>
     </div>

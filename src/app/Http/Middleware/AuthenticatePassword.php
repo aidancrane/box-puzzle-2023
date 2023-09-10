@@ -16,7 +16,6 @@ class AuthenticatePassword
     public function handle(Request $request, Closure $next): Response
     {
             if ($request->session()->has('authenticated')) {
-                dd("authenticated");
                 return $next($request);
             }
     
