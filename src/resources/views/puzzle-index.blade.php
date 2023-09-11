@@ -7,10 +7,8 @@
 
         <h1>Puzzles</h1>
         <ol>
-            @if (session('current-puzzle') == 0)
             <li><a href="{{ route('question1.question') }}">Cipher</a></li>
-            @endif
-            @if (session('current-puzzle') > 1)
+            @if (session('question-1') == true)
             <li>puzzle question goes here. 2</li>
             @endif
         </ol>
@@ -27,6 +25,11 @@
             <input type="text" id="password" name="puzzle-code" placeholder="Enter puzzle code...">
             <button id="unlockButton">Unlock</button>
         </form>
+
+        <div class="rules-link">
+            <a href="{{ route('check.rules') }}">I would like to read the rules again.</a>
+        </div>
+
     </div>
 </main>
 @include('footer')

@@ -1,24 +1,29 @@
-@include('header')
-<header>
-    <h1>box-puzzle 📦</h1>
-</header>
+@include('puzzles.puzzle-header')
 <main>
     <div class="puzzle">
 
-        <h1>Question 1</h1>
+        <h1>Cipher</h1>
 
-        Asdf
+        <p>Named after the Roman general Julius Caesar, the Caesar cipher is a method of encoding messages by shifting each letter
+             of the alphabet a certain number of places down or up the alphabet.</p>
 
-        <form method="POST" action="{{ route('question-1.answer') }}">
+        <p>This may seem generic and easy, and thats because it is.</p>
+
+        <p class="quote">Wkh sdvvzrug wr wkh fxuuhqw era-sxccoh urxqg lv hdvb, exw lq rughu wr pdnh vxuh brx fdq dfwxdoob
+             jhw wkh sdvvzrug, L kdyh wr sxw d ordg ri hawud whaw lq wr pdnh lw dfklhydeoh. Dqbzdb, wkh sdvvzrug lv 'Ehq lv d edg iulhqg'.</p>
+
+
+        <form method="POST" action="{{ route('question1.answer') }}">
             @csrf
             <label for="code">Please enter the answer below to unlock the next question,</label>
             @if (session('error'))
                 <p style="color: red;">{{ session('error') }}</p>
             @endif
 
-            <input type="text" id="puzzle-question" name="puzzle-answer" placeholder="Enter puzzle code...">
+            <input type="text" id="puzzle-answer" name="puzzle-answer" placeholder="Answer...">
             <button id="unlockButton">Unlock</button>
         </form>
+        <p class="right-aligned-text">Puzzle code: 714423</p>
     </div>
 </main>
 @include('footer')

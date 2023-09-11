@@ -32,14 +32,12 @@ class PasswordController extends Controller
 
     public function checkPassword(Request $request)
     {
-        $password = '741142';
+        $password = '714423';
         $enteredPassword = $request->input('password');
 
         if ($enteredPassword === $password) {
             // Password is correct, set a session or cookie to remember the user
             $request->session()->put('authenticated', true);
-            $request->session()->put('current-puzzle', 0);
-
             return redirect('/');
         }
 
@@ -50,11 +48,14 @@ class PasswordController extends Controller
     {
         $enteredPuzzleCode = $request->input('puzzle-code');
 
-        if ($enteredPuzzleCode === 'puzzle-password-goes-here') {
+        if ($enteredPuzzleCode === '714423') {
             // Unlock a puzzle for the user.
-            $request->session()->put('current-puzzle', 0);
+            return redirect('/')->with('error', 'Yeah you\'ve already put that code in don\'t get too excited...');
+        }
 
-            return redirect('/');
+        if ($enteredPuzzleCode === '714423') {
+            // Unlock a puzzle for the user.
+            return redirect('/')->with('error', 'Yeah you\'ve already put that code in don\'t get too excited...');
         }
 
         return redirect()->back()->with('error', 'Puzzle code not recognized.');
