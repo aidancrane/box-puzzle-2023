@@ -26,12 +26,12 @@ main {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    margin-top: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 label {
@@ -88,6 +88,10 @@ footer {
     padding-left: 10px;
 }
 
+.answer {
+    color: green;
+}
+
 .right-aligned-text {
     text-align: right; /* Align text to the right */
 }
@@ -95,3 +99,4 @@ footer {
 .rules-link {
     padding-top: 10px;
 }
+

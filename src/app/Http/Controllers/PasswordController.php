@@ -48,14 +48,16 @@ class PasswordController extends Controller
     {
         $enteredPuzzleCode = $request->input('puzzle-code');
 
+        // Question 1
         if ($enteredPuzzleCode === '714423') {
-            // Unlock a puzzle for the user.
             return redirect('/')->with('error', 'Yeah you\'ve already put that code in don\'t get too excited...');
         }
 
-        if ($enteredPuzzleCode === '714423') {
-            // Unlock a puzzle for the user.
-            return redirect('/')->with('error', 'Yeah you\'ve already put that code in don\'t get too excited...');
+         // Question 2
+        if ($enteredPuzzleCode === '396437') { 
+            // Unlock the previous puzzle for the user.
+            $request->session()->put('question-1', true);
+            return redirect('/');
         }
 
         return redirect()->back()->with('error', 'Puzzle code not recognized.');

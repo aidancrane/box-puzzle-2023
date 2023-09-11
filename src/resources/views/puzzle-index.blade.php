@@ -9,7 +9,7 @@
         <ol>
             <li><a href="{{ route('question1.question') }}">Cipher</a></li>
             @if (session('question-1') == true)
-            <li>puzzle question goes here. 2</li>
+            <li><a href="{{ route('question2.question') }}">Slow Scan TV</a></li>
             @endif
         </ol>
 

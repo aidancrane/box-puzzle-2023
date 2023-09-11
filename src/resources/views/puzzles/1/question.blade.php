@@ -12,6 +12,11 @@
         <p class="quote">Wkh sdvvzrug wr wkh fxuuhqw era-sxccoh urxqg lv hdvb, exw lq rughu wr pdnh vxuh brx fdq dfwxdoob
              jhw wkh sdvvzrug, L kdyh wr sxw d ordg ri hawud whaw lq wr pdnh lw dfklhydeoh. Dqbzdb, wkh sdvvzrug lv 'Ehq lv d edg iulhqg'.</p>
 
+        @if (session('question-1') == true)
+        <p class="quote answer">The password to the current box-puzzle round is easy, but in order to make sure you can actually get the password,
+              I have to put a load of extra text in to make it achievable. Anyway, the password is 'Ben is a bad friend'.</p>
+        @endif
+
 
         <form method="POST" action="{{ route('question1.answer') }}">
             @csrf

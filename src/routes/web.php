@@ -24,6 +24,9 @@ Route::get("/rules", ['as' => 'check.rules', 'uses' => 'App\Http\Controllers\Puz
 Route::get("/cipher", ['as' => 'question1.question', 'uses' => 'App\Http\Controllers\PuzzleController@question1']);
 Route::post("/cipher", ['as' => 'question1.answer', 'uses' => 'App\Http\Controllers\PuzzleController@answer1']);
 
+Route::get("/sstv", ['as' => 'question2.question', 'uses' => 'App\Http\Controllers\PuzzleController@question2']);
+Route::post("/sstv", ['as' => 'question2.answer', 'uses' => 'App\Http\Controllers\PuzzleController@answer2']);
+
 Route::fallback(function () {
     return view("404"); // template should exists
 });
