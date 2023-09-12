@@ -10,6 +10,10 @@
 
         <p>This next question requires an app. To make this easier I have the app installed which you can use.</p>
 
+        <audio controls>
+            <source src="{{ asset('audio\20230912_172008.wav') }}" type="audio/wav">
+          Your browser does not support the audio element.
+        </audio>
 
         <form method="POST" action="{{ route('question2.answer') }}">
             @csrf
