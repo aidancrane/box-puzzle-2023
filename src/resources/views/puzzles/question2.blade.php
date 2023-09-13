@@ -28,6 +28,8 @@
             systems. Satellites orbiting the Earth capture data about weather patterns, temperature, humidity, and more.
             This information is transmitted back to Earth, where it's used by meteorologists to create weather
             forecasts, monitor climate changes, and track severe weather events.</p>
+            
+        <p>If you think this little block of text was worth reading in order to solve the quiz, you'd be wrong.</p>
 
         <p>Anyway here is me fucking around with it to make a puzzle. (the sound is quite annoying)</p>
 

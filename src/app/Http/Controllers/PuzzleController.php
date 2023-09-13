@@ -92,5 +92,26 @@ class PuzzleController extends Controller
         return redirect()->back()->with('error', 'Puzzle code not recognized.');
     }
 
+    public function question5(Request $request)
+    {
+        return view('puzzles.question5');
+    }
+
+    public function answer5(Request $request)
+    {
+        $enteredPuzzleCode = strtolower($request->input('puzzle-answer'));
+
+        if ($enteredPuzzleCode === '00574971') {
+            // Unlock a puzzle for the user.
+            $request->session()->put('question-1', true);
+            $request->session()->put('question-2', true);
+            $request->session()->put('question-3', true);
+            $request->session()->put('question-4', true);
+            $request->session()->put('question-5', true);
+            return redirect('/');
+        }
+        return redirect()->back()->with('error', 'Puzzle code not recognized.');
+    }
+
 
 }

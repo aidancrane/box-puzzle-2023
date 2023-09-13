@@ -17,6 +17,9 @@
             @if (session('question-3') == true)
             <li><a href="{{ route('question4.question') }}">Maze 2</a></li>
             @endif
+            @if (session('question-4') == true)
+            <li><a href="{{ route('question5.question') }}">Maze 3</a></li>
+            @endif
         </ol>
 
         <h2>Unlock Puzzles</h2>
