@@ -11,6 +11,12 @@
             @if (session('question-1') == true)
             <li><a href="{{ route('question2.question') }}">Slow Scan TV</a></li>
             @endif
+            @if (session('question-2') == true)
+            <li><a href="{{ route('question3.question') }}">Maze</a></li>
+            @endif
+            @if (session('question-3') == true)
+            <li><a href="{{ route('question4.question') }}">Maze 2</a></li>
+            @endif
         </ol>
 
         <h2>Unlock Puzzles</h2>

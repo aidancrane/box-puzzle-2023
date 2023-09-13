@@ -54,11 +54,31 @@ class PasswordController extends Controller
         }
 
          // Question 2
-        if ($enteredPuzzleCode === '396437') { 
+         if ($enteredPuzzleCode === '396437') { 
             // Unlock the previous puzzle for the user.
             $request->session()->put('question-1', true);
             return redirect('/');
         }
+
+        // Question 3
+        if ($enteredPuzzleCode === '104920') { 
+            // Unlock the previous puzzle for the user.
+            $request->session()->put('question-1', true);
+            $request->session()->put('question-2', true);
+            return redirect('/');
+        }
+
+        // Question 4
+        if ($enteredPuzzleCode === '001149') { 
+            // Unlock the previous puzzle for the user.
+            $request->session()->put('question-1', true);
+            $request->session()->put('question-2', true);
+            $request->session()->put('question-3', true);
+            return redirect('/');
+        }
+
+
+        
 
         return redirect()->back()->with('error', 'Puzzle code not recognized.');
     }

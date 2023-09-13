@@ -27,6 +27,12 @@ Route::post("/cipher", ['as' => 'question1.answer', 'uses' => 'App\Http\Controll
 Route::get("/sstv", ['as' => 'question2.question', 'uses' => 'App\Http\Controllers\PuzzleController@question2']);
 Route::post("/sstv", ['as' => 'question2.answer', 'uses' => 'App\Http\Controllers\PuzzleController@answer2']);
 
+Route::get("/maze", ['as' => 'question3.question', 'uses' => 'App\Http\Controllers\PuzzleController@question3']);
+Route::post("/maze", ['as' => 'question3.answer', 'uses' => 'App\Http\Controllers\PuzzleController@answer3']);
+
+Route::get("/maze2", ['as' => 'question4.question', 'uses' => 'App\Http\Controllers\PuzzleController@question4']);
+Route::post("/maze2", ['as' => 'question4.answer', 'uses' => 'App\Http\Controllers\PuzzleController@answer4']);
+
 Route::fallback(function () {
     return view("404"); // template should exists
 });
