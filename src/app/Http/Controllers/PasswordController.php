@@ -77,6 +77,16 @@ class PasswordController extends Controller
             return redirect('/');
         }
 
+        // Question 5
+        if ($enteredPuzzleCode === '990914') { 
+            // Unlock the previous puzzle for the user.
+            $request->session()->put('question-1', true);
+            $request->session()->put('question-2', true);
+            $request->session()->put('question-3', true);
+            $request->session()->put('question-4', true);
+            return redirect('/');
+        }
+
 
         
 

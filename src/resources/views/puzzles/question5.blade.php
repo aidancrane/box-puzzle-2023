@@ -2,7 +2,7 @@
 <main>
     <div class="puzzle">
 
-        <h1>Code</h1>
+        <h1><s>Maze 3</s> Code</h1>
 
         <p class="quote">The website did let me make an even bigger maze but I thought it was a bit mean at that point.</p>
 

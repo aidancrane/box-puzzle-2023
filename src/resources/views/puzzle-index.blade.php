@@ -22,18 +22,26 @@
             @endif
         </ol>
 
-        <h2>Unlock Puzzles</h2>
+        @if (session('question-5') == true)
+        <div class="puzzle">
+        <a href="{{ route('check.congratulations') }}" class="congrats-link">📦 Congratulations 📦</a>
+        </div>
+        @endif
 
-        <form method="POST" action="{{ route('check.puzzle-advance') }}">
-            @csrf
-            <label for="code">If you know a puzzle code enter it here,</label>
-            @if (session('error'))
-                <p style="color: red;">{{ session('error') }}</p>
-            @endif
+        @if (session('question-5') != true)
+            <h2>Unlock Puzzles</h2>
 
-            <input type="text" id="password" name="puzzle-code" placeholder="Enter puzzle code...">
-            <button id="unlockButton">Unlock</button>
-        </form>
+            <form method="POST" action="{{ route('check.puzzle-advance') }}">
+                @csrf
+                <label for="code">If you know a puzzle code enter it here,</label>
+                @if (session('error'))
+                    <p style="color: red;">{{ session('error') }}</p>
+                @endif
+
+                <input type="text" id="password" name="puzzle-code" placeholder="Enter puzzle code...">
+                <button id="unlockButton">Unlock</button>
+            </form>
+        @endif
 
         <div class="rules-link">
             <a href="{{ route('check.rules') }}">I would like to read the rules again.</a>

@@ -101,7 +101,7 @@ class PuzzleController extends Controller
     {
         $enteredPuzzleCode = strtolower($request->input('puzzle-answer'));
 
-        if ($enteredPuzzleCode === '00574971') {
+        if ($enteredPuzzleCode === '445143443678') {
             // Unlock a puzzle for the user.
             $request->session()->put('question-1', true);
             $request->session()->put('question-2', true);
@@ -113,5 +113,9 @@ class PuzzleController extends Controller
         return redirect()->back()->with('error', 'Puzzle code not recognized.');
     }
 
+    public function congratulations(Request $request)
+    {
+        return view('congratulations');
+    }
 
 }

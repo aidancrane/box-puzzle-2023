@@ -36,6 +36,8 @@ Route::post("/maze2", ['as' => 'question4.answer', 'uses' => 'App\Http\Controlle
 Route::get("/box", ['as' => 'question5.question', 'uses' => 'App\Http\Controllers\PuzzleController@question5']);
 Route::post("/box", ['as' => 'question5.answer', 'uses' => 'App\Http\Controllers\PuzzleController@answer5']);
 
+Route::get("/congratulations", ['as' => 'check.congratulations', 'uses' => 'App\Http\Controllers\PuzzleController@congratulations']);
+
 Route::fallback(function () {
     return view("404"); // template should exists
 });
